@@ -1,4 +1,4 @@
-FROM node:lts-alpine3.10 as node-lts
+FROM repository.dimas-maryanto.com:8086/node:14-alpine3.11 as node-lts
 
 COPY . /source
 WORKDIR /source
@@ -12,6 +12,6 @@ RUN node ./node_modules/@angular/cli/bin/ng build \
 --extract-licenses \
 --vendor-chunk=true
 
-FROM nginx:1.19-alpine
+FROM repository.dimas-maryanto.com:8086/nginx:1.19-alpine
 COPY --from=node-lts /source/dist/angular-dockerize /usr/share/nginx/html
 EXPOSE 80
