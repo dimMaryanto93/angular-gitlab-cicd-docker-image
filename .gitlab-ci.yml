@@ -11,7 +11,7 @@ cache:
 
 build:
     services:
-        - name: ${PRIVATE_REPOSITORY_PULL}/docker:18.09-dind
+        - name: ${PRIVATE_REGISTRY_PULL}/docker:18.09-dind
           # Enabled insecure registry into docker inside docker
           entrypoint: ["dockerd-entrypoint.sh"]
           # TODO variable `--insecure-registry` cant be inject as variable
