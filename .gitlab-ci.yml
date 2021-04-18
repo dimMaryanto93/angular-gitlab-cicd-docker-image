@@ -3,7 +3,7 @@ image: repository.dimas-maryanto.com:8086/node:14-alpine3.11
 variables:
     APP_NAME: "angular-dockerize"
     PRIVATE_REGISTRY_PUSH: "repository.dimas-maryanto.com:8087"
-    PRIVATE_REGISTRY_PULL: "repository.dimas-maryanto.com:8087"
+    PRIVATE_REGISTRY_PULL: "repository.dimas-maryanto.com:8086"
 
 cache:
     paths:
