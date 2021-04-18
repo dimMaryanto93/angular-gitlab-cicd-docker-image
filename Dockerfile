@@ -13,5 +13,6 @@ RUN node ./node_modules/@angular/cli/bin/ng build \
 --vendor-chunk=true
 
 FROM repository.dimas-maryanto.com:8086/nginx:1.19-alpine
-COPY --from=node-lts /source/dist/angular-dockerize /usr/share/nginx/html
+ARG APP_NAME
+COPY --from=node-lts /source/dist/${APP_NAME} /usr/share/nginx/html
 EXPOSE 80
