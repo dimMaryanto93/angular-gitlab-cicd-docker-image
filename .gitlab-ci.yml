@@ -46,6 +46,9 @@ publish-image:
         # modified file /etc/hosts inside docker container
         DOCKER_HOST: tcp://dockerd:2375
         DOCKER_DRIVER: overlay2
+    before_script: 
+        - docker login ${PRIVATE_REGISTRY_PUSH} -u ${REGISTERY_USERNAME} -p ${REGISTERY_USERNAME}
+        - docker login ${PRIVATE_REGISTRY_PULL} -u ${REGISTERY_USERNAME} -p ${REGISTERY_USERNAME}
     script:
         - docker build -t ${IMAGE_NAME} -f Dockerfile --build-arg APP_NAME=${APP_NAME} .
     after_script:
