@@ -47,8 +47,8 @@ publish-image:
         DOCKER_HOST: tcp://dockerd:2375
         DOCKER_DRIVER: overlay2
     before_script:
-        - docker login --username ${REGISTERY_USERNAME} --password ${REGISTERY_PASSWORD} ${PRIVATE_REGISTRY_PUSH}
-        - docker login --username ${REGISTERY_USERNAME} --password ${REGISTERY_PASSWORD} ${PRIVATE_REGISTRY_PULL}
+        - docker login --username ${REGISTRY_USERNAME} --password ${REGISTRY_PASSWORD} ${PRIVATE_REGISTRY_PUSH}
+        - docker login --username ${REGISTRY_USERNAME} --password ${REGISTRY_PASSWORD} ${PRIVATE_REGISTRY_PULL}
     script:
         - docker build -t ${IMAGE_NAME} -f Dockerfile --build-arg APP_NAME=${APP_NAME} .
     after_script:
