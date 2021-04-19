@@ -3,10 +3,10 @@ stages:
   - publish
 
 variables:
-    APP_NAME: "${CI_PROJECT_NAME}"
+    APP_NAME: "angular-dockerize"
     PRIVATE_REGISTRY_PUSH: "repository.dimas-maryanto.com:8087"
     PRIVATE_REGISTRY_PULL: "repository.dimas-maryanto.com:8086"
-    IMAGE_NAME: "${PRIVATE_REGISTRY_PUSH}/${CI_PROJECT_NAMESPACE}/${APP_NAME}:$CI_COMMIT_TAG"
+    IMAGE_NAME: "${PRIVATE_REGISTRY_PUSH}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:$CI_COMMIT_TAG"
 
 image: ${PRIVATE_REGISTRY_PULL}/node:14-alpine3.11
 
